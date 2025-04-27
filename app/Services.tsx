@@ -3,6 +3,7 @@
 
 import { motion } from 'framer-motion'
 import { Dumbbell, Apple, Users, Headset } from 'lucide-react'
+import Link from 'next/link'
 
 const services = [
   {
@@ -82,13 +83,10 @@ export default function Services() {
                 {title}
               </h3>
               <p className="text-gray-600 flex-grow">{description}</p>
-              <a
-                href="#"
-                className="mt-4 inline-flex items-center font-medium text-cyan-500 hover:underline"
-              >
+              <Link href="/services" className="mt-4 inline-flex items-center font-medium text-cyan-500 hover:underline">
                 Learn More
                 <span className="ml-2 text-xl">&rarr;</span>
-              </a>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

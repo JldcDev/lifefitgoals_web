@@ -1,6 +1,5 @@
 // app/components/Pricing.tsx
-'use client'
-
+import Link from 'next/link'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
@@ -61,7 +60,7 @@ export default function Pricing() {
           <span
             className={`absolute top-1 left-1 w-1/2 h-10 bg-cyan-500 rounded-full transition-transform duration-300 ease-in-out ${
               isAnnual ? 'translate-x-full' : 'translate-x-0'
-            }`} 
+            }`}
           />
           {/* Labels */}
           <span
@@ -122,16 +121,17 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#"
-                  className={`mt-auto inline-block px-6 py-3 rounded-lg font-medium ${
-                    plan.highlighted
-                      ? 'bg-cyan-500 text-white hover:bg-cyan-600'
-                      : 'border border-cyan-400 text-cyan-500 hover:bg-cyan-50'
-                  }`}
-                >
-                  {isAnnual ? 'Contratar Anual' : 'Contratar Mensual'}
-                </a>
+                <Link href="/pricing">
+                  <a
+                    className={`mt-auto inline-block px-6 py-3 rounded-lg font-medium ${
+                      plan.highlighted
+                        ? 'bg-cyan-500 text-white hover:bg-cyan-600'
+                        : 'border border-cyan-400 text-cyan-500 hover:bg-cyan-50'
+                    }`}
+                  >
+                    {isAnnual ? 'Contratar Anual' : 'Contratar Mensual'}
+                  </a>
+                </Link>
               </motion.div>
             )
           })}
