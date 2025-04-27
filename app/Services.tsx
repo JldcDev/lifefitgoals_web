@@ -83,7 +83,10 @@ export default function Services() {
                 {title}
               </h3>
               <p className="text-gray-600 flex-grow">{description}</p>
-              <Link href="/services" className="mt-4 inline-flex items-center font-medium text-cyan-500 hover:underline">
+              <Link
+                href="/services"
+                className="mt-4 inline-flex items-center font-medium text-cyan-500 hover:underline"
+              >
                 Learn More
                 <span className="ml-2 text-xl">&rarr;</span>
               </Link>

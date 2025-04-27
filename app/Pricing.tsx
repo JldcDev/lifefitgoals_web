@@ -1,4 +1,5 @@
-// app/components/Pricing.tsx
+'use client'
+
 import Link from 'next/link'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -121,16 +122,11 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/pricing">
-                  <a
-                    className={`mt-auto inline-block px-6 py-3 rounded-lg font-medium ${
-                      plan.highlighted
-                        ? 'bg-cyan-500 text-white hover:bg-cyan-600'
-                        : 'border border-cyan-400 text-cyan-500 hover:bg-cyan-50'
-                    }`}
-                  >
-                    {isAnnual ? 'Contratar Anual' : 'Contratar Mensual'}
-                  </a>
+                <Link
+                  href="/pricing"
+                  className="mt-auto inline-block px-6 py-3 rounded-lg font-medium bg-cyan-500 text-white hover:bg-cyan-600"
+                >
+                  Ver Planes
                 </Link>
               </motion.div>
             )
