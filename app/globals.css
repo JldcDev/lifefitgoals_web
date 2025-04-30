@@ -5,9 +5,15 @@
   --foreground: #171717;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* globals.css o en tailwind.config.js usando extend */
 .clip-navbar {
-  clip-path: polygon(3% 0%, 102% 0%, 99.5% 100%, 0% 100%);
+  clip-path: polygon(3% 0%, 98.5% 0%, 97.5% 100%, 0% 100%);
+  border-radius: 5px; /* Suaviza las esquinas */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
 }
 
 

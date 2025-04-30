@@ -3,12 +3,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'; 
 import { FiSearch, FiX } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 interface NavLinkProps {
   label: string;
-  href: string;
+  href: string; 
 }
 
 const NavLink = ({ label, href }: NavLinkProps) => (
@@ -19,6 +20,11 @@ const NavLink = ({ label, href }: NavLinkProps) => (
 
 export default function Navbar() {
   const [isSearchOpen, setSearchOpen] = useState(false);
+  const pathname = usePathname(); 
+  const isHome = pathname === '/'; 
+
+  const pricingHref = isHome ? '/#pricing' : '/pricing'; 
+  const contactHref = isHome ? '/#contact' : '/'; 
 
   return (
     <>
@@ -43,9 +49,9 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-6">
             <NavLink label="Home" href="/" />
             <NavLink label="Services" href="/services" />
-            <NavLink label="Pricing" href="/pricing" />
+            <NavLink label="Pricing" href={pricingHref} /> 
             <NavLink label="Login" href="/login" />
-            <NavLink label="Contact" href="/contact" />
+            <NavLink label="Contact" href={contactHref} /> 
             <NavLink label="Blog" href="/blog" />
             <NavLink label="Sign Up" href="/signup" />
 
